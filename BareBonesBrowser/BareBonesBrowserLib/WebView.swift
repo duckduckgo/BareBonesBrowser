@@ -3,7 +3,19 @@
 //  BareBonesBrowser
 //
 //  Created by Federico Cappelli on 06/02/2024.
+//  Copyright © 2017 DuckDuckGo. All rights reserved.
 //
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 
 import Foundation
 import WebKit
@@ -17,33 +29,26 @@ public protocol WebViewUIDelegate {
 public struct WebView {
 
     public typealias View = WKWebView
-    public var uiDelegate: WebViewUIDelegate?
+    let wkWebView: View = View()
 
-//    private let url: URL
-    let wkWebView: View
+    public var webViewUIDelegate: WebViewUIDelegate?
+    private let urlObserver = URLObserver()
 
     public init() {
-//        self.url = url
-        self.wkWebView = View()
         self.wkWebView.allowsBackForwardNavigationGestures = true
     }
 
     func updateView(_ view: View) {
-//        let req = URLRequest(url: url)
-//        view.load(req)
+        wkWebView.reload()
     }
 
     public func load(url: URL) {
-        DispatchQueue.main.async {
-            let req = URLRequest(url: url)
-            wkWebView.load(req)
-        }
+        let req = URLRequest(url: url)
+        load(req)
     }
 
     public func load(_ urlRequest: URLRequest) {
-        DispatchQueue.main.async {
-            wkWebView.load(urlRequest)
-        }
+        wkWebView.load(urlRequest)
     }
 
     func goBack() -> Void {
@@ -54,9 +59,10 @@ public struct WebView {
         wkWebView.goForward()
     }
 
-    @MainActor func reloadFromOrigin() {
-        wkWebView.reloadFromOrigin()
+    func reload() {
+        wkWebView.reload()
     }
+
 }
 
 //MARK: - Coordinator
@@ -106,7 +112,7 @@ extension WebView {
         public func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
 
             if navigationAction.targetFrame == nil {
-                let newWebView = parent.uiDelegate?.webViewRequestNewWindow(with: webView, createWebViewWith: configuration, for: navigationAction, windowFeatures: windowFeatures)
+                let newWebView = parent.webViewUIDelegate?.webViewRequestNewWindow(with: webView, createWebViewWith: configuration, for: navigationAction, windowFeatures: windowFeatures)
                 return newWebView
             }
             return nil
