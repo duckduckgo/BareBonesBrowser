@@ -40,8 +40,8 @@ public struct BareBonesBrowserView: View {
         self.initialURL = initialURL
         self.homeURL = homeURL
         self.uiDelegate = uiDelegate
-        self.webview.wkWebView.addObserver(urlObserver, forKeyPath: #keyPath(WKWebView.url), options: .new, context: nil)
-        self.webview.webViewUIDelegate = self
+        webview.wkWebView.addObserver(urlObserver, forKeyPath: #keyPath(WKWebView.url), options: .new, context: nil)
+        webview.webViewUIDelegate = self
     }
 
     public var body: some View {
@@ -50,29 +50,29 @@ public struct BareBonesBrowserView: View {
                 Button(action: { webview.goBack() }) { Image(systemName: "arrowshape.backward") }
                 Button(action: { webview.goForward() }) { Image(systemName: "arrowshape.forward") }
                 Button(action: { webview.reload() }) { Image(systemName: "arrow.circlepath") }
-
-                TextField("", text: $addressText) {
-                    guard addressText.isEmpty == false,
-                          let finalURL = URL(string: addressText) else {
+                TextField("", text: $addressText) { //this is triggered every time the focus is removed from the field
+                    guard addressText.isEmpty == false, let finalURL = URL(string: addressText) else {
                         return
                     }
                     webview.load(url: finalURL)
-                }.autocorrectionDisabled()
-                //macOS 12+
-//                TextField("Exact address (including HTTP, WWW, ...)", text: $addressText)
-//                    .onSubmit {
-//                        guard addressText.isEmpty == false,
-//                              let finalURL = URL(string: addressText) else {
-//                            return
-//                        }
-//                        webview.load(url: finalURL)
-//                    }
-                    .autocorrectionDisabled()
+                }
+                /*this is the right way but it's macOS 12+ only
+                TextField("", text: $addressText)
+                    .onSubmit {
+                        guard addressText.isEmpty == false, let finalURL = URL(string: addressText) else {
+                            return
+                        }
+                        webview.load(url: finalURL)
+                    }
+                 */
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocorrectionDisabled()
                 Button(action: { webview.load(url: homeURL) }) { Image(systemName: "house") }
-            }.padding(8)
+            }
+            .padding(8)
             webview
-        }.onAppear(perform: {
-            addressText = initialURL.absoluteString
+        }
+        .onAppear(perform: {
             urlObserver.observeURLChanges { address in
                 addressText = address
             }
@@ -85,7 +85,7 @@ public struct BareBonesBrowserView: View {
 
 extension BareBonesBrowserView: WebViewUIDelegate {
 
-    public func webViewRequestNewWindow(with webView: WKWebView,
+    public func webDidViewRequestNewWindow(with webView: WKWebView,
                                  createWebViewWith configuration: WKWebViewConfiguration,
                                  for navigationAction: WKNavigationAction,
                                  windowFeatures: WKWindowFeatures) -> WKWebView? {

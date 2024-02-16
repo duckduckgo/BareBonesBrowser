@@ -23,7 +23,7 @@ import SwiftUI
 
 public protocol WebViewUIDelegate {
 
-    func webViewRequestNewWindow(with webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView?
+    func webDidViewRequestNewWindow(with webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView?
 }
 
 public struct WebView {
@@ -111,7 +111,7 @@ extension WebView {
         public func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
 
             if navigationAction.targetFrame == nil {
-                let newWebView = parent.webViewUIDelegate?.webViewRequestNewWindow(with: webView, createWebViewWith: configuration, for: navigationAction, windowFeatures: windowFeatures)
+                let newWebView = parent.webViewUIDelegate?.webDidViewRequestNewWindow(with: webView, createWebViewWith: configuration, for: navigationAction, windowFeatures: windowFeatures)
                 return newWebView
             }
             return nil
