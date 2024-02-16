@@ -1,5 +1,5 @@
 import XCTest
-@testable import BareBonesBrowser
+@testable import BareBonesBrowserKit
 
 final class BareBonesBrowserTests: XCTestCase {
     func testExample() throws {

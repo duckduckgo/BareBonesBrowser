@@ -32,7 +32,6 @@ public struct WebView {
     let wkWebView: View = View()
 
     public var webViewUIDelegate: WebViewUIDelegate?
-    private let urlObserver = URLObserver()
 
     public init() {
         self.wkWebView.allowsBackForwardNavigationGestures = true
@@ -125,7 +124,9 @@ extension WebView: NSViewRepresentable {
     
     public func makeNSView(context: Context) -> View {
         wkWebView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15"
-        wkWebView.isInspectable = true
+        if #available(macOS 13.3, *) {
+            wkWebView.isInspectable = true
+        }
         wkWebView.navigationDelegate = context.coordinator
         wkWebView.uiDelegate = context.coordinator
         return wkWebView

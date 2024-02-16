@@ -29,7 +29,7 @@ struct BareBonesBrowserApp: App {
         WindowGroup("Bare Bones Browser", for: URL.self) { $url in
             BareBonesBrowserView(initialURL: homeURL, homeURL: homeURL, uiDelegate: self)
                 .frame(minWidth: 640, maxWidth: .infinity, minHeight: 480, maxHeight: .infinity)
-        }.windowResizability(.contentSize)
+        }//.windowResizability(.contentSize)
     }
 #else
     var body: some Scene {

@@ -26,7 +26,7 @@ public protocol BareBonesBrowserUIDelegate {
     func browserDidRequestNewWindow(urlRequest: URLRequest)
 }
 
-struct BareBonesBrowserView: View {
+public struct BareBonesBrowserView: View {
 
     private let homeURL: URL
     private let initialURL: URL
@@ -44,25 +44,34 @@ struct BareBonesBrowserView: View {
         self.webview.webViewUIDelegate = self
     }
 
-    var body: some View {
+    public var body: some View {
         VStack {
             HStack {
                 Button(action: { webview.goBack() }) { Image(systemName: "arrowshape.backward") }
                 Button(action: { webview.goForward() }) { Image(systemName: "arrowshape.forward") }
                 Button(action: { webview.reload() }) { Image(systemName: "arrow.circlepath") }
-                TextField("Exact address (including HTTP, WWW, ...)", text: $addressText).onSubmit {
+
+                TextField("", text: $addressText) {
                     guard addressText.isEmpty == false,
                           let finalURL = URL(string: addressText) else {
                         return
                     }
                     webview.load(url: finalURL)
-                }
-                .autocorrectionDisabled()
+                }.autocorrectionDisabled()
+                //macOS 12+
+//                TextField("Exact address (including HTTP, WWW, ...)", text: $addressText)
+//                    .onSubmit {
+//                        guard addressText.isEmpty == false,
+//                              let finalURL = URL(string: addressText) else {
+//                            return
+//                        }
+//                        webview.load(url: finalURL)
+//                    }
+                    .autocorrectionDisabled()
                 Button(action: { webview.load(url: homeURL) }) { Image(systemName: "house") }
             }.padding(8)
             webview
         }.onAppear(perform: {
-//            webview.webViewUIDelegate = self
             addressText = initialURL.absoluteString
             urlObserver.observeURLChanges { address in
                 addressText = address
@@ -75,8 +84,8 @@ struct BareBonesBrowserView: View {
 //MARK: - WebViewUIDelegate
 
 extension BareBonesBrowserView: WebViewUIDelegate {
-    
-    func webViewRequestNewWindow(with webView: WKWebView,
+
+    public func webViewRequestNewWindow(with webView: WKWebView,
                                  createWebViewWith configuration: WKWebViewConfiguration,
                                  for navigationAction: WKNavigationAction,
                                  windowFeatures: WKWindowFeatures) -> WKWebView? {

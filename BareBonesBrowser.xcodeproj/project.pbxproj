@@ -7,25 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F12606A52B7F6FB700C44851 /* BareBonesBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12606A22B7F6FB700C44851 /* BareBonesBrowserView.swift */; };
+		F12606A62B7F6FB700C44851 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12606A32B7F6FB700C44851 /* WebView.swift */; };
+		F12606A72B7F6FB700C44851 /* URLObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12606A42B7F6FB700C44851 /* URLObserver.swift */; };
 		F1CC8AAB2B7236F7001C2BBF /* BareBonesBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC8AAA2B7236F7001C2BBF /* BareBonesBrowserApp.swift */; };
 		F1CC8AAF2B723707001C2BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1CC8AAE2B723707001C2BBF /* Assets.xcassets */; };
 		F1CC8AB32B723707001C2BBF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1CC8AB22B723707001C2BBF /* Preview Assets.xcassets */; };
-		F1CC8AC42B729ADD001C2BBF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC8AC02B729ADD001C2BBF /* DataManager.swift */; };
-		F1CC8AC52B729ADD001C2BBF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC8AC12B729ADD001C2BBF /* WebView.swift */; };
-		F1CC8AC62B729ADD001C2BBF /* URLObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC8AC22B729ADD001C2BBF /* URLObserver.swift */; };
-		F1CC8AC72B729ADD001C2BBF /* BareBonesBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC8AC32B729ADD001C2BBF /* BareBonesBrowserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F12606A22B7F6FB700C44851 /* BareBonesBrowserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BareBonesBrowserView.swift; sourceTree = "<group>"; };
+		F12606A32B7F6FB700C44851 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		F12606A42B7F6FB700C44851 /* URLObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLObserver.swift; sourceTree = "<group>"; };
+		F17D10132B7E61AB002B50A8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F1CC8AA72B7236F7001C2BBF /* BareBonesBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BareBonesBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CC8AAA2B7236F7001C2BBF /* BareBonesBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BareBonesBrowserApp.swift; sourceTree = "<group>"; };
 		F1CC8AAE2B723707001C2BBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1CC8AB02B723707001C2BBF /* BareBonesBrowser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BareBonesBrowser.entitlements; sourceTree = "<group>"; };
 		F1CC8AB22B723707001C2BBF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F1CC8AC02B729ADD001C2BBF /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		F1CC8AC12B729ADD001C2BBF /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		F1CC8AC22B729ADD001C2BBF /* URLObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLObserver.swift; sourceTree = "<group>"; };
-		F1CC8AC32B729ADD001C2BBF /* BareBonesBrowserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BareBonesBrowserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,9 +38,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F12606A12B7F6FB700C44851 /* BareBonesBrowserKit */ = {
+			isa = PBXGroup;
+			children = (
+				F12606A22B7F6FB700C44851 /* BareBonesBrowserView.swift */,
+				F12606A32B7F6FB700C44851 /* WebView.swift */,
+				F12606A42B7F6FB700C44851 /* URLObserver.swift */,
+			);
+			name = BareBonesBrowserKit;
+			path = Sources/BareBonesBrowserKit;
+			sourceTree = SOURCE_ROOT;
+		};
 		F1CC8A9E2B7236F7001C2BBF = {
 			isa = PBXGroup;
 			children = (
+				F17D10132B7E61AB002B50A8 /* README.md */,
 				F1CC8AA92B7236F7001C2BBF /* BareBonesBrowser */,
 				F1CC8AA82B7236F7001C2BBF /* Products */,
 			);
@@ -59,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				F1CC8AAA2B7236F7001C2BBF /* BareBonesBrowserApp.swift */,
-				F1CC8ABF2B729ADD001C2BBF /* BareBonesBrowserLib */,
+				F12606A12B7F6FB700C44851 /* BareBonesBrowserKit */,
 				F1CC8AAE2B723707001C2BBF /* Assets.xcassets */,
 				F1CC8AB02B723707001C2BBF /* BareBonesBrowser.entitlements */,
 				F1CC8AB12B723707001C2BBF /* Preview Content */,
@@ -73,17 +84,6 @@
 				F1CC8AB22B723707001C2BBF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F1CC8ABF2B729ADD001C2BBF /* BareBonesBrowserLib */ = {
-			isa = PBXGroup;
-			children = (
-				F1CC8AC32B729ADD001C2BBF /* BareBonesBrowserView.swift */,
-				F1CC8AC02B729ADD001C2BBF /* DataManager.swift */,
-				F1CC8AC22B729ADD001C2BBF /* URLObserver.swift */,
-				F1CC8AC12B729ADD001C2BBF /* WebView.swift */,
-			);
-			path = BareBonesBrowserLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,11 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1CC8AC42B729ADD001C2BBF /* DataManager.swift in Sources */,
+				F12606A62B7F6FB700C44851 /* WebView.swift in Sources */,
 				F1CC8AAB2B7236F7001C2BBF /* BareBonesBrowserApp.swift in Sources */,
-				F1CC8AC72B729ADD001C2BBF /* BareBonesBrowserView.swift in Sources */,
-				F1CC8AC52B729ADD001C2BBF /* WebView.swift in Sources */,
-				F1CC8AC62B729ADD001C2BBF /* URLObserver.swift in Sources */,
+				F12606A52B7F6FB700C44851 /* BareBonesBrowserView.swift in Sources */,
+				F12606A72B7F6FB700C44851 /* URLObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +310,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.duckduckgo.BareBonesBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,7 +352,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.duckduckgo.BareBonesBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
