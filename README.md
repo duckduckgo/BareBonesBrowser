@@ -6,12 +6,18 @@ Minimum os requirements:
 - iOS 16
 - macOS 14
 
+#### Cookies and website data management
+The app uses the same non-persistent `WKWebsiteDataStore` and `WKProcessPool` for all windows.
+
 ## BareBonesBrowserKit
 The core code is available as a Swift Package
 
 Minimum os requirements:
 - iOS 14
 - macOS 11
+
+#### Cookies and website data management
+The `WKWebViewConfiguration` is provided by the app, so the BareBonesBrowserKit is not in control of cookies or websites' data.
 
 ### AppKit Usage
 ```

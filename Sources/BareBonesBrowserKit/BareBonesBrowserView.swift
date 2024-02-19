@@ -31,15 +31,17 @@ public struct BareBonesBrowserView: View {
     private let homeURL: URL
     private let initialURL: URL
     private let urlObserver = URLObserver()
-    private var webview: WebView = WebView()
+    private var webview: WebView
+
     public var uiDelegate: BareBonesBrowserUIDelegate?
 
     @State private var addressText: String = ""
 
-    public init(initialURL: URL, homeURL: URL, uiDelegate: BareBonesBrowserUIDelegate? = nil) {
+    public init(initialURL: URL, homeURL: URL, uiDelegate: BareBonesBrowserUIDelegate? = nil, configuration: WKWebViewConfiguration) {
         self.initialURL = initialURL
         self.homeURL = homeURL
         self.uiDelegate = uiDelegate
+        webview = WebView(configuration: configuration)
         webview.wkWebView.addObserver(urlObserver, forKeyPath: #keyPath(WKWebView.url), options: .new, context: nil)
         webview.webViewUIDelegate = self
     }
@@ -103,5 +105,5 @@ extension BareBonesBrowserView: WebViewUIDelegate {
 
 #Preview {
     let url = URL(string: "https://duckduckgo.com")!
-    return BareBonesBrowserView(initialURL: url,homeURL: url, uiDelegate: nil)
+    return BareBonesBrowserView(initialURL: url,homeURL: url, uiDelegate: nil, configuration: WKWebViewConfiguration())
 }

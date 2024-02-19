@@ -29,11 +29,12 @@ public protocol WebViewUIDelegate {
 public struct WebView {
 
     public typealias View = WKWebView
-    let wkWebView: View = View()
+    let wkWebView: View
 
     public var webViewUIDelegate: WebViewUIDelegate?
 
-    public init() {
+    public init(configuration: WKWebViewConfiguration) {
+        self.wkWebView = View(frame: .zero, configuration: configuration)
         self.wkWebView.allowsBackForwardNavigationGestures = true
     }
 

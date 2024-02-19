@@ -18,23 +18,31 @@
 //  limitations under the License.
 
 import SwiftUI
+import WebKit
 
 @main
 struct BareBonesBrowserApp: App {
     @Environment(\.openWindow) private var openWindow
     let homeURL = URL(string: "https://duckduckgo.com")!
 
+    static var webViewConfiguration: WKWebViewConfiguration = {
+        let configuration = WKWebViewConfiguration()
+        configuration.websiteDataStore = WKWebsiteDataStore.nonPersistent()
+        configuration.processPool = WKProcessPool() //Need to reuse the same process pool to achieve cross-window cookie sharing
+        return configuration
+    }()
+
 #if os(macOS)
     var body: some Scene {
         WindowGroup("Bare Bones Browser", for: URL.self) { $url in
-            BareBonesBrowserView(initialURL: homeURL, homeURL: homeURL, uiDelegate: self)
+            BareBonesBrowserView(initialURL: homeURL, homeURL: homeURL, uiDelegate: self, configuration: Self.webViewConfiguration)
                 .frame(minWidth: 640, maxWidth: .infinity, minHeight: 480, maxHeight: .infinity)
         }//.windowResizability(.contentSize)
     }
 #else
     var body: some Scene {
         WindowGroup("Bare Bones Browser", for: URL.self) { $url in
-            BareBonesBrowserView(initialURL: url ?? homeURL, homeURL: homeURL)
+            BareBonesBrowserView(initialURL: url ?? homeURL, homeURL: homeURL, configuration: Self.webViewConfiguration)
         }
     }
 #endif
