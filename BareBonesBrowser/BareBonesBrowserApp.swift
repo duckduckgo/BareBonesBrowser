@@ -3,7 +3,7 @@
 //  BareBonesBrowser
 //
 //  Created by Federico Cappelli on 06/02/2024.
-//  Copyright © 2017 DuckDuckGo. All rights reserved.
+//  Copyright © 2024 DuckDuckGo. All rights reserved.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -19,6 +19,11 @@
 
 import SwiftUI
 import WebKit
+
+enum UserAgent: String {
+    case macOS = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15"
+    case iOS = "Mozilla/5.0 (iPhone; CPU iPhone OS 17_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604."
+}
 
 @main
 struct BareBonesBrowserApp: App {
@@ -39,7 +44,7 @@ struct BareBonesBrowserApp: App {
                                  homeURL: homeURL,
                                  uiDelegate: self,
                                  configuration: Self.webViewConfiguration,
-                                 userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15")
+                                 userAgent: UserAgent.macOS.rawValue)
                 .frame(minWidth: 640, maxWidth: .infinity, minHeight: 480, maxHeight: .infinity)
         }//.windowResizability(.contentSize)
     }
@@ -49,7 +54,7 @@ struct BareBonesBrowserApp: App {
             BareBonesBrowserView(initialURL: url ?? homeURL,
                                  homeURL: homeURL,
                                  configuration: Self.webViewConfiguration,
-                                 userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604.")
+                                 userAgent: UserAgent.iOS.rawValue)
         }
     }
 #endif

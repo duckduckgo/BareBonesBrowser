@@ -3,7 +3,7 @@
 //  BareBonesBrowser
 //
 //  Created by Federico Cappelli on 06/02/2024.
-//  Copyright © 2017 DuckDuckGo. All rights reserved.
+//  Copyright © 2024 DuckDuckGo. All rights reserved.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ public struct BareBonesBrowserView: View {
     private let homeURL: URL
     private let initialURL: URL
     private let urlObserver = URLObserver()
-    private var webview: WebView
+    private var webView: WebView
 
     public var uiDelegate: BareBonesBrowserUIDelegate?
 
@@ -45,26 +45,26 @@ public struct BareBonesBrowserView: View {
         self.initialURL = initialURL
         self.homeURL = homeURL
         self.uiDelegate = uiDelegate
-        webview = WebView(configuration: configuration)
-        webview.wkWebView.addObserver(urlObserver, forKeyPath: #keyPath(WKWebView.url), options: .new, context: nil)
-        webview.webViewUIDelegate = self
+        webView = WebView(configuration: configuration)
+        webView.wkWebView.addObserver(urlObserver, forKeyPath: #keyPath(WKWebView.url), options: .new, context: nil)
+        webView.webViewUIDelegate = self
 
-        if let customUserAgent = userAgent {
-            webview.wkWebView.customUserAgent = customUserAgent
+        if let userAgent {
+            webView.wkWebView.customUserAgent = userAgent
         }
     }
 
     public var body: some View {
         VStack {
             HStack {
-                Button(action: { webview.goBack() }) { Image(systemName: "arrowshape.backward") }
-                Button(action: { webview.goForward() }) { Image(systemName: "arrowshape.forward") }
-                Button(action: { webview.reload() }) { Image(systemName: "arrow.circlepath") }
+                Button(action: { webView.goBack() }) { Image(systemName: "arrowshape.backward") }
+                Button(action: { webView.goForward() }) { Image(systemName: "arrowshape.forward") }
+                Button(action: { webView.reload() }) { Image(systemName: "arrow.circlepath") }
                 TextField("", text: $addressText) { //this is triggered every time the focus is removed from the field
                     guard addressText.isEmpty == false, let finalURL = URL(string: addressText) else {
                         return
                     }
-                    webview.load(url: finalURL)
+                    webView.load(url: finalURL)
                 }
                 /*this is the right way but it's macOS 12+ only
                 TextField("", text: $addressText)
@@ -77,16 +77,16 @@ public struct BareBonesBrowserView: View {
                  */
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocorrectionDisabled()
-                Button(action: { webview.load(url: homeURL) }) { Image(systemName: "house") }
+                Button(action: { webView.load(url: homeURL) }) { Image(systemName: "house") }
             }
             .padding(8)
-            webview
+            webView
         }
         .onAppear(perform: {
             urlObserver.observeURLChanges { address in
                 addressText = address
             }
-            webview.load(url: initialURL)
+            webView.load(url: initialURL)
         })
     }
 }
@@ -105,7 +105,7 @@ extension BareBonesBrowserView: WebViewUIDelegate {
             delegate.browserDidRequestNewWindow(urlRequest: navigationAction.request)
         } else {
             // If the platform doesn't implements the uiDelegate then we just load the request in the current webview
-            self.webview.load(navigationAction.request)
+            self.webView.load(navigationAction.request)
         }
         return nil
     }

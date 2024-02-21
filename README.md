@@ -33,14 +33,17 @@ static var webViewConfiguration: WKWebViewConfiguration = {
 }
 
 private func openVanillaBrowser(url: URL) {
-	let myView = NSHostingView(rootView: BareBonesBrowserView(initialURL: url, homeURL: url, uiDelegate: self, configuration: Self.webViewConfiguration))
+	        let myView = NSHostingView(rootView: BareBonesBrowserView(initialURL: url,
+                                                                  homeURL: url,
+                                                                  uiDelegate: self,
+                                                                  configuration: Self.webViewConfiguration,
+                                                                  userAgent: "Your UA"))
 	myView.translatesAutoresizingMaskIntoConstraints = false
 	myView.widthAnchor.constraint(greaterThanOrEqualToConstant: 640).isActive = true
 	myView.heightAnchor.constraint(greaterThanOrEqualToConstant: 480).isActive = true
 	let viewController = NSViewController()
 	viewController.view = myView
 	let window = NSWindow(contentViewController: viewController)
-	window.contentViewController = viewController
 	window.center()
 	let wc = NSWindowController(window: window)
 	wc.showWindow(nil)
