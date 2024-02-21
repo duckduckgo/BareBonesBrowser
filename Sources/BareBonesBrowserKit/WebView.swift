@@ -124,7 +124,6 @@ extension WebView {
 extension WebView: NSViewRepresentable {
     
     public func makeNSView(context: Context) -> View {
-        wkWebView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15"
         if #available(macOS 13.3, *) {
             wkWebView.isInspectable = true
         }
@@ -137,11 +136,10 @@ extension WebView: NSViewRepresentable {
         updateView(nsView)
     }
 }
-#elseif os(iOS)
+#else
 extension WebView: UIViewRepresentable {
     
     public func makeUIView(context: Context) -> View {
-        wkWebView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 17_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604."
         wkWebView.navigationDelegate = context.coordinator
         wkWebView.uiDelegate = context.coordinator
         return wkWebView

@@ -35,14 +35,21 @@ struct BareBonesBrowserApp: App {
 #if os(macOS)
     var body: some Scene {
         WindowGroup("Bare Bones Browser", for: URL.self) { $url in
-            BareBonesBrowserView(initialURL: homeURL, homeURL: homeURL, uiDelegate: self, configuration: Self.webViewConfiguration)
+            BareBonesBrowserView(initialURL: homeURL, 
+                                 homeURL: homeURL,
+                                 uiDelegate: self,
+                                 configuration: Self.webViewConfiguration,
+                                 userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15")
                 .frame(minWidth: 640, maxWidth: .infinity, minHeight: 480, maxHeight: .infinity)
         }//.windowResizability(.contentSize)
     }
 #else
     var body: some Scene {
         WindowGroup("Bare Bones Browser", for: URL.self) { $url in
-            BareBonesBrowserView(initialURL: url ?? homeURL, homeURL: homeURL, configuration: Self.webViewConfiguration)
+            BareBonesBrowserView(initialURL: url ?? homeURL,
+                                 homeURL: homeURL,
+                                 configuration: Self.webViewConfiguration,
+                                 userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604.")
         }
     }
 #endif

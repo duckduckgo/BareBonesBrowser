@@ -37,13 +37,21 @@ public struct BareBonesBrowserView: View {
 
     @State private var addressText: String = ""
 
-    public init(initialURL: URL, homeURL: URL, uiDelegate: BareBonesBrowserUIDelegate? = nil, configuration: WKWebViewConfiguration) {
+    public init(initialURL: URL, 
+                homeURL: URL,
+                uiDelegate: BareBonesBrowserUIDelegate? = nil,
+                configuration: WKWebViewConfiguration,
+                userAgent: String? = nil) {
         self.initialURL = initialURL
         self.homeURL = homeURL
         self.uiDelegate = uiDelegate
         webview = WebView(configuration: configuration)
         webview.wkWebView.addObserver(urlObserver, forKeyPath: #keyPath(WKWebView.url), options: .new, context: nil)
         webview.webViewUIDelegate = self
+
+        if let customUserAgent = userAgent {
+            webview.wkWebView.customUserAgent = customUserAgent
+        }
     }
 
     public var body: some View {
