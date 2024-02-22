@@ -1,31 +1,37 @@
 # BareBonesBrowser
 
-SwiftUI Universal browser for testing and triaging purposes. The main project is a minimalistic browser ([feature list](https://app.asana.com/0/0/1206524485561895/f))
+## We are hiring!
 
-Minimum os requirements:
+DuckDuckGo is growing fast and we continue to expand our fully distributed team. We embrace diverse perspectives, and seek out passionate, self-motivated people, committed to our shared vision of raising the standard of trust online. If you are a senior software engineer capable in either iOS or Android, visit our [careers](https://duckduckgo.com/hiring/#open) page to find out more about our openings!
+
+## What is it?
+
+The BareBonesBrowser is a SwiftUI vanilla browser for testing and triaging purposes.
+
+#### Minimum requirements:
 - iOS 16
 - macOS 14
 
 #### Cookies and website data management
 The app uses the same non-persistent `WKWebsiteDataStore` and `WKProcessPool` for all windows.
 
-## BareBonesBrowserKit
-The core code is available as a Swift Package
+### BareBonesBrowserKit
+The browser core code is available as a Swift Package
 
-Minimum os requirements:
+#### Minimum requirements:
 - iOS 14
 - macOS 11
 
 #### Cookies and website data management
 The `WKWebViewConfiguration` is provided by the app, so the BareBonesBrowserKit is not in control of cookies or websites' data.
 
-### AppKit Usage
+### AppKit Example
 ```
 static var webViewConfiguration: WKWebViewConfiguration = {
-    let configuration = WKWebViewConfiguration()
-    configuration.websiteDataStore = WKWebsiteDataStore.nonPersistent()
-    configuration.processPool = WKProcessPool()
-    return configuration
+	let configuration = WKWebViewConfiguration()
+	configuration.websiteDataStore = WKWebsiteDataStore.nonPersistent()
+	configuration.processPool = WKProcessPool()
+	return configuration
 }()
 
 @objc func openVanillaBrowser(_ sender: Any?) {
@@ -33,16 +39,16 @@ static var webViewConfiguration: WKWebViewConfiguration = {
 }
 
 private func openVanillaBrowser(url: URL) {
-	        let myView = NSHostingView(rootView: BareBonesBrowserView(initialURL: url,
-                                                                  homeURL: url,
-                                                                  uiDelegate: self,
-                                                                  configuration: Self.webViewConfiguration,
-                                                                  userAgent: "Your UA"))
-	myView.translatesAutoresizingMaskIntoConstraints = false
-	myView.widthAnchor.constraint(greaterThanOrEqualToConstant: 640).isActive = true
-	myView.heightAnchor.constraint(greaterThanOrEqualToConstant: 480).isActive = true
+	let browserView = NSHostingView(rootView: BareBonesBrowserView(initialURL: url,
+                                                                      homeURL: url,
+                                                                   uiDelegate: self,
+                                                                configuration: Self.webViewConfiguration,
+                                                                    userAgent: "Your UA"))
+	browserView.translatesAutoresizingMaskIntoConstraints = false
+	browserView.widthAnchor.constraint(greaterThanOrEqualToConstant: 640).isActive = true
+	browserView.heightAnchor.constraint(greaterThanOrEqualToConstant: 480).isActive = true
 	let viewController = NSViewController()
-	viewController.view = myView
+	viewController.view = browserView
 	let window = NSWindow(contentViewController: viewController)
 	window.center()
 	let wc = NSWindowController(window: window)
@@ -55,3 +61,11 @@ func browserDidRequestNewWindow(urlRequest: URLRequest) {
 	}
 }
 ```
+
+### SwiftUI Example
+
+See [BareBonesBrowserApp.swift](BareBonesBrowser/BareBonesBrowserApp.swift)
+
+## License
+
+BareBonesBrowseris is distributed under the Apache 2.0 [license](https://github.com/duckduckgo/BrowserServicesKit/blob/main/LICENSE).
