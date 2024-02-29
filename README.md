@@ -66,6 +66,13 @@ func browserDidRequestNewWindow(urlRequest: URLRequest) {
 
 See [BareBonesBrowserApp.swift](BareBonesBrowser/BareBonesBrowserApp.swift)
 
-## License
+## Contribute
 
-BareBonesBrowseris is distributed under the Apache 2.0 [license](https://github.com/duckduckgo/BrowserServicesKit/blob/main/LICENSE).
+Please refer to [contributing](CONTRIBUTING.md).
+
+## Discuss
+
+Contact us at https://duckduckgo.com/feedback if you have feedback, questions or want to chat.
+
+## License
+DuckDuckGo is distributed under the Apache 2.0 [license](https://github.com/duckduckgo/ios/blob/master/LICENSE.md).
