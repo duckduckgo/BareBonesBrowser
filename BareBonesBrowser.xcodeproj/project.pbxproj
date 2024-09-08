@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D18A6832C8E281700284595 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A6752C8E281700284595 /* icon.png */; };
+		1D18A6842C8E281700284595 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A6762C8E281700284595 /* icon@2x.png */; };
+		1D18A6852C8E281700284595 /* emojiMap.js in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A6782C8E281700284595 /* emojiMap.js */; };
+		1D18A6862C8E281700284595 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A6792C8E281700284595 /* manifest.json */; };
+		1D18A6872C8E281700284595 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A67A2C8E281700284595 /* README.md */; };
+		1D18A6882C8E281700284595 /* substitute.js in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A67B2C8E281700284595 /* substitute.js */; };
+		1D18A6892C8E281700284595 /* WebExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18A67D2C8E281700284595 /* WebExtensionManager.swift */; };
+		1D18A68A2C8E281700284595 /* WKWebExtensionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18A67F2C8E281700284595 /* WKWebExtensionTab.swift */; };
+		1D18A68B2C8E281700284595 /* WKWebExtensionWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18A6802C8E281700284595 /* WKWebExtensionWindow.swift */; };
 		F12606A52B7F6FB700C44851 /* BareBonesBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12606A22B7F6FB700C44851 /* BareBonesBrowserView.swift */; };
 		F12606A62B7F6FB700C44851 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12606A32B7F6FB700C44851 /* WebView.swift */; };
 		F12606A72B7F6FB700C44851 /* URLObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12606A42B7F6FB700C44851 /* URLObserver.swift */; };
@@ -16,6 +25,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D18A6752C8E281700284595 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		1D18A6762C8E281700284595 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		1D18A6782C8E281700284595 /* emojiMap.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = emojiMap.js; sourceTree = "<group>"; };
+		1D18A6792C8E281700284595 /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		1D18A67A2C8E281700284595 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1D18A67B2C8E281700284595 /* substitute.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = substitute.js; sourceTree = "<group>"; };
+		1D18A67D2C8E281700284595 /* WebExtensionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebExtensionManager.swift; sourceTree = "<group>"; };
+		1D18A67E2C8E281700284595 /* WebExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebExtensions.h; sourceTree = "<group>"; };
+		1D18A67F2C8E281700284595 /* WKWebExtensionTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebExtensionTab.swift; sourceTree = "<group>"; };
+		1D18A6802C8E281700284595 /* WKWebExtensionWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebExtensionWindow.swift; sourceTree = "<group>"; };
+		1D18A6812C8E281700284595 /* WKWebViewConfiguration+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebViewConfiguration+Private.h"; sourceTree = "<group>"; };
+		1D18A68C2C8E28A700284595 /* BareBonesBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BareBonesBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
 		F12606A22B7F6FB700C44851 /* BareBonesBrowserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BareBonesBrowserView.swift; sourceTree = "<group>"; };
 		F12606A32B7F6FB700C44851 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		F12606A42B7F6FB700C44851 /* URLObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLObserver.swift; sourceTree = "<group>"; };
@@ -38,6 +59,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D18A6772C8E281700284595 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				1D18A6752C8E281700284595 /* icon.png */,
+				1D18A6762C8E281700284595 /* icon@2x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		1D18A67C2C8E281700284595 /* emoji-substitution */ = {
+			isa = PBXGroup;
+			children = (
+				1D18A6772C8E281700284595 /* icons */,
+				1D18A6782C8E281700284595 /* emojiMap.js */,
+				1D18A6792C8E281700284595 /* manifest.json */,
+				1D18A67A2C8E281700284595 /* README.md */,
+				1D18A67B2C8E281700284595 /* substitute.js */,
+			);
+			path = "emoji-substitution";
+			sourceTree = "<group>";
+		};
+		1D18A6822C8E281700284595 /* WebExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				1D18A67C2C8E281700284595 /* emoji-substitution */,
+				1D18A67D2C8E281700284595 /* WebExtensionManager.swift */,
+				1D18A67E2C8E281700284595 /* WebExtensions.h */,
+				1D18A67F2C8E281700284595 /* WKWebExtensionTab.swift */,
+				1D18A6802C8E281700284595 /* WKWebExtensionWindow.swift */,
+				1D18A6812C8E281700284595 /* WKWebViewConfiguration+Private.h */,
+			);
+			path = WebExtensions;
+			sourceTree = "<group>";
+		};
 		F12606A12B7F6FB700C44851 /* BareBonesBrowserKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,8 +126,10 @@
 			children = (
 				F1CC8AAA2B7236F7001C2BBF /* BareBonesBrowserApp.swift */,
 				F12606A12B7F6FB700C44851 /* BareBonesBrowserKit */,
+				1D18A6822C8E281700284595 /* WebExtensions */,
 				F1CC8AAE2B723707001C2BBF /* Assets.xcassets */,
 				F1CC8AB02B723707001C2BBF /* BareBonesBrowser.entitlements */,
+				1D18A68C2C8E28A700284595 /* BareBonesBrowser-Bridging-Header.h */,
 				F1CC8AB12B723707001C2BBF /* Preview Content */,
 			);
 			path = BareBonesBrowser;
@@ -118,6 +175,7 @@
 				TargetAttributes = {
 					F1CC8AA62B7236F7001C2BBF = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -144,8 +202,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D18A6852C8E281700284595 /* emojiMap.js in Resources */,
 				F1CC8AB32B723707001C2BBF /* Preview Assets.xcassets in Resources */,
+				1D18A6842C8E281700284595 /* icon@2x.png in Resources */,
+				1D18A6872C8E281700284595 /* README.md in Resources */,
+				1D18A6882C8E281700284595 /* substitute.js in Resources */,
 				F1CC8AAF2B723707001C2BBF /* Assets.xcassets in Resources */,
+				1D18A6862C8E281700284595 /* manifest.json in Resources */,
+				1D18A6832C8E281700284595 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,10 +220,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D18A6892C8E281700284595 /* WebExtensionManager.swift in Sources */,
 				F12606A62B7F6FB700C44851 /* WebView.swift in Sources */,
+				1D18A68A2C8E281700284595 /* WKWebExtensionTab.swift in Sources */,
 				F1CC8AAB2B7236F7001C2BBF /* BareBonesBrowserApp.swift in Sources */,
 				F12606A52B7F6FB700C44851 /* BareBonesBrowserView.swift in Sources */,
 				F12606A72B7F6FB700C44851 /* URLObserver.swift in Sources */,
+				1D18A68B2C8E281700284595 /* WKWebExtensionWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +244,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_MODULES_AUTOLINK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -204,6 +272,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				FRAMEWORK_SEARCH_PATHS = ../WebKit/WebKitBuild/Release;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -224,6 +293,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = ../WebKit/WebKitBuild/Release;
 			};
 			name = Debug;
 		};
@@ -238,6 +308,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_MODULES_AUTOLINK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -265,6 +336,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				FRAMEWORK_SEARCH_PATHS = ../WebKit/WebKitBuild/Release;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -277,6 +349,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = ../WebKit/WebKitBuild/Release;
 			};
 			name = Release;
 		};
@@ -285,6 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BareBonesBrowser/BareBonesBrowser.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -317,6 +391,8 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BareBonesBrowser/BareBonesBrowser-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -327,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BareBonesBrowser/BareBonesBrowser.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -359,6 +436,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "BareBonesBrowser/BareBonesBrowser-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

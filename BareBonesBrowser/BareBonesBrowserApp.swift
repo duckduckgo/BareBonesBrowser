@@ -18,7 +18,6 @@
 //  limitations under the License.
 
 import SwiftUI
-import WebKit
 
 enum UserAgent: String {
     case macOS = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15"
@@ -34,6 +33,9 @@ struct BareBonesBrowserApp: App {
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = WKWebsiteDataStore.nonPersistent()
         configuration.processPool = WKProcessPool() //Need to reuse the same process pool to achieve cross-window cookie sharing
+
+        WebExtensionManager.shared.setUpWebExtensionController(for: configuration)
+
         return configuration
     }()
 
