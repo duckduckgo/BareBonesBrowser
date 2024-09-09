@@ -7,15 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D18A6832C8E281700284595 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A6752C8E281700284595 /* icon.png */; };
-		1D18A6842C8E281700284595 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A6762C8E281700284595 /* icon@2x.png */; };
-		1D18A6852C8E281700284595 /* emojiMap.js in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A6782C8E281700284595 /* emojiMap.js */; };
-		1D18A6862C8E281700284595 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A6792C8E281700284595 /* manifest.json */; };
-		1D18A6872C8E281700284595 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A67A2C8E281700284595 /* README.md */; };
-		1D18A6882C8E281700284595 /* substitute.js in Resources */ = {isa = PBXBuildFile; fileRef = 1D18A67B2C8E281700284595 /* substitute.js */; };
 		1D18A6892C8E281700284595 /* WebExtensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18A67D2C8E281700284595 /* WebExtensionManager.swift */; };
 		1D18A68A2C8E281700284595 /* WKWebExtensionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18A67F2C8E281700284595 /* WKWebExtensionTab.swift */; };
 		1D18A68B2C8E281700284595 /* WKWebExtensionWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D18A6802C8E281700284595 /* WKWebExtensionWindow.swift */; };
+		370A46F22C8F0CDB00A1E9DE /* emoji-substitution in Resources */ = {isa = PBXBuildFile; fileRef = 370A46F12C8F0CDB00A1E9DE /* emoji-substitution */; };
 		F12606A52B7F6FB700C44851 /* BareBonesBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12606A22B7F6FB700C44851 /* BareBonesBrowserView.swift */; };
 		F12606A62B7F6FB700C44851 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12606A32B7F6FB700C44851 /* WebView.swift */; };
 		F12606A72B7F6FB700C44851 /* URLObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12606A42B7F6FB700C44851 /* URLObserver.swift */; };
@@ -25,18 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D18A6752C8E281700284595 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		1D18A6762C8E281700284595 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		1D18A6782C8E281700284595 /* emojiMap.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = emojiMap.js; sourceTree = "<group>"; };
-		1D18A6792C8E281700284595 /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
-		1D18A67A2C8E281700284595 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1D18A67B2C8E281700284595 /* substitute.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = substitute.js; sourceTree = "<group>"; };
 		1D18A67D2C8E281700284595 /* WebExtensionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebExtensionManager.swift; sourceTree = "<group>"; };
 		1D18A67E2C8E281700284595 /* WebExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebExtensions.h; sourceTree = "<group>"; };
 		1D18A67F2C8E281700284595 /* WKWebExtensionTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebExtensionTab.swift; sourceTree = "<group>"; };
 		1D18A6802C8E281700284595 /* WKWebExtensionWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebExtensionWindow.swift; sourceTree = "<group>"; };
 		1D18A6812C8E281700284595 /* WKWebViewConfiguration+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebViewConfiguration+Private.h"; sourceTree = "<group>"; };
 		1D18A68C2C8E28A700284595 /* BareBonesBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BareBonesBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
+		370A46F12C8F0CDB00A1E9DE /* emoji-substitution */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "emoji-substitution"; sourceTree = "<group>"; };
 		F12606A22B7F6FB700C44851 /* BareBonesBrowserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BareBonesBrowserView.swift; sourceTree = "<group>"; };
 		F12606A32B7F6FB700C44851 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		F12606A42B7F6FB700C44851 /* URLObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLObserver.swift; sourceTree = "<group>"; };
@@ -59,31 +49,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D18A6772C8E281700284595 /* icons */ = {
-			isa = PBXGroup;
-			children = (
-				1D18A6752C8E281700284595 /* icon.png */,
-				1D18A6762C8E281700284595 /* icon@2x.png */,
-			);
-			path = icons;
-			sourceTree = "<group>";
-		};
-		1D18A67C2C8E281700284595 /* emoji-substitution */ = {
-			isa = PBXGroup;
-			children = (
-				1D18A6772C8E281700284595 /* icons */,
-				1D18A6782C8E281700284595 /* emojiMap.js */,
-				1D18A6792C8E281700284595 /* manifest.json */,
-				1D18A67A2C8E281700284595 /* README.md */,
-				1D18A67B2C8E281700284595 /* substitute.js */,
-			);
-			path = "emoji-substitution";
-			sourceTree = "<group>";
-		};
 		1D18A6822C8E281700284595 /* WebExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				1D18A67C2C8E281700284595 /* emoji-substitution */,
+				370A46F12C8F0CDB00A1E9DE /* emoji-substitution */,
 				1D18A67D2C8E281700284595 /* WebExtensionManager.swift */,
 				1D18A67E2C8E281700284595 /* WebExtensions.h */,
 				1D18A67F2C8E281700284595 /* WKWebExtensionTab.swift */,
@@ -202,14 +171,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D18A6852C8E281700284595 /* emojiMap.js in Resources */,
+				370A46F22C8F0CDB00A1E9DE /* emoji-substitution in Resources */,
 				F1CC8AB32B723707001C2BBF /* Preview Assets.xcassets in Resources */,
-				1D18A6842C8E281700284595 /* icon@2x.png in Resources */,
-				1D18A6872C8E281700284595 /* README.md in Resources */,
-				1D18A6882C8E281700284595 /* substitute.js in Resources */,
 				F1CC8AAF2B723707001C2BBF /* Assets.xcassets in Resources */,
-				1D18A6862C8E281700284595 /* manifest.json in Resources */,
-				1D18A6832C8E281700284595 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
