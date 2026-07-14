@@ -14,6 +14,11 @@ let package = Package(
         .library(
             name: "BareBonesBrowserKit",
             targets: ["BareBonesBrowserKit"]
+        ),
+        // A tiny macOS app that opens BareBonesBrowserView, runnable via `swift run`.
+        .executable(
+            name: "BareBonesBrowserApp",
+            targets: ["BareBonesBrowserApp"]
         )
     ],
     targets: [
@@ -21,6 +26,10 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "BareBonesBrowserKit"
+        ),
+        .executableTarget(
+            name: "BareBonesBrowserApp",
+            dependencies: ["BareBonesBrowserKit"]
         )
     ]
 )
